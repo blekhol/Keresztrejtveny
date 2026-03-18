@@ -18,10 +18,35 @@
                     else
                     {
                         Console.Write("##");
-					}
-				}
+                    }
+                }
                 Console.Write("\n\t");
             }
-        }
+            int max = 0;
+            for (int i = 0; i < racs.OszlopokDb; i++)
+            {
+				int szamlalo = 0;
+				for (int j = 0; j < racs.SorokDb; j++)
+                {   
+					if (racs.Racs[j, i] == '-')
+                    {
+                        szamlalo++;
+                    }
+                    else
+                    {
+						if (szamlalo > max)
+						{
+							max = szamlalo;
+						}
+                        szamlalo = 0;
+					}
+				}
+				if (szamlalo > max)
+				{
+					max = szamlalo;
+				}
+			}
+			Console.WriteLine("\n7.feladat: leghosszabb függ: " + max);
+		}
     }
 }
