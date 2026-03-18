@@ -15,6 +15,8 @@ namespace Keresztrejtveny
 		public int OszlopokDb { get { return adatsorok[0].Length; } }
 		public int SorokDb { get { return adatsorok.Count; } }
 
+		public char[,] Racs { get => racs; }
+
 		public KeresztrejtvenyRacs(string forras)
 		{
 			BeolvasAdatsorok(forras);
